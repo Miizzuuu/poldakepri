@@ -1,56 +1,59 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="header">
-    <div class="countdown d-flex flex-column justify-content-center align-items-center" style="color: #ffff; background-color: #ec1c24; height: 60vh;">
-        <h1 class="fw-bold" style="font-size: 75px; font-family: 'Montserrat', sans-serif;">COMING SOON</h1>
-
-        <div class="time-container d-flex justify-content-center align-items-center fw-bold" style="font-size: 75px; font-family: 'Montserrat', sans-serif;">
-            <!-- Days -->
+   <div class="countdown d-flex flex-column justify-content-center align-items-center" style="color: #ffff; background-color: #ec1c24; height: 60vh;">
+       <h1 class="fw-bold" style="font-size: 75px; font-family: 'Montserrat', sans-serif;">COMING SOON</h1>
+       <div class="time-container d-flex justify-content-center align-items-center fw-bold" style="font-size: 75px; font-family: 'Montserrat', sans-serif;">
             <div class="time-block d-flex flex-column align-items-center mx-4">
                 <span class="time-value">154</span>
                 <span class="time-label" style="font-size: 20px">DAYS</span>
             </div>
-            <!-- Hours -->
             <div class="time-block d-flex flex-column align-items-center mx-4">
                 <span class="time-value">08</span>
                 <span class="time-label" style="font-size: 20px">HOURS</span>
             </div>
-            <!-- Minutes -->
             <div class="time-block d-flex flex-column align-items-center mx-4">
                 <span class="time-value">51</span>
                 <span class="time-label" style="font-size: 20px">MINS</span>
             </div>
-            <!-- Seconds -->
             <div class="time-block d-flex flex-column align-items-center mx-4">
                 <span class="time-value">52</span>
                 <span class="time-label" style="font-size: 20px">SECS</span>
             </div>
-        </div>
-    </div>
+       </div>
+   </div>
 </div>
-
 <div class="img">
-    <img src="static/img/banner.png" alt="banner" style="width: 100%;">
-    <img src="static/img/banner3.png" alt="banner3" style="width: 100%;">
-    <img src="static/img/banner4.png" alt="banner4" style="width: 100%;">
-    <img src="static/img/banner5.png" alt="banner5" style="width: 100%;">
-    <img src="static/img/banner2umroh.png" alt="banner2umroh" style="width: 100%;">
+   <img src="static/img/banner.png" alt="banner" style="width: 100%;">
+   <img src="static/img/banner3.png" alt="banner3" style="width: 100%;">
+   <img src="static/img/banner4.png" alt="banner4" style="width: 100%;">
 </div>
 
-{% comment %}
-sponsor
-{% endcomment %}
+<div class="py-5">
+   <div class="card shadow">
+       <div class="card-header bg-light text-black">
+           <h2>Formulir Pendaftaran</h2>
+       </div>
+       <div class="card-body">
+           <form method="POST" enctype="multipart/form-data">
+               {% csrf_token %}
+               {{ form.as_p }}
+               <div class="">
+                   <button type="submit" class="btn btn-dark">Daftar</button>
+               </div>
+           </form>
+       </div>
+   </div>
+</div>
+
+<img src="static/img/banner5.png" alt="banner5" style="width: 100%;">
+<img src="static/img/banner2umroh.png" alt="banner2umroh" style="width: 100%;">
+
 <div class="container py-5">
-    <div class="row text-center mb-3">
-        <h3 class="fw-bold" style="font-family: 'Montserrat', sans-serif;">SPONSOR</h3>
-    </div>
-    <div class="row d-flex justify-content-center">
-        <img src="static/img/sanford.jpeg" alt="sanford-logo" style="width: 10vw; height: 15vh;">
-        <img src="static/img/pocari.jpeg" alt="pocari-logo" style="width: 10vw; height: 12vh">
-        <img src="static/img/plnbatam.png" alt="pln-logo" style="width: 10vw;">
-        <img src="static/img/ptamsyar.png" alt="pptamsyar-logo" style="width: 10vw;">
-        <img src="static/img/sss.png" alt="sss-logo" style="width: 10vw;">
-    </div>
+   <div class="row text-center mb-3">
+       <h3 class="fw-bold" style="font-family: 'Montserrat', sans-serif;">SPONSOR</h3>
+   </div>
+   <div class="row d-flex justify-content-center">
+   </div>
 </div>
-
 {% endblock %}
